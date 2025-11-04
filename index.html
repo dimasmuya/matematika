@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MathLearn - Belajar Matematika</title>
+    <!-- Memuat Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Memuat font Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Menggunakan font Inter sebagai default */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Menyembunyikan halaman yang tidak aktif */
+        .page {
+            display: none;
+        }
+        /* Menampilkan halaman yang aktif */
+        .page.active {
+            display: block;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-300">
+
+    <div class="container mx-auto min-h-screen max-w-4xl p-4 md:p-8">
+
+        <!-- ===== HALAMAN UTAMA (HOME) ===== -->
+        <div id="page-home" class="page active">
+            <header class="text-center mb-12">
+                <h1 class="text-4xl md:text-5xl font-bold text-blue-600 dark:text-blue-400">Selamat Datang di MathLearn</h1>
+                <p class="text-lg text-gray-600 dark:text-gray-300 mt-4">Pilih tingkatan kelas Anda untuk memulai petualangan matematika!</p>
+            </header>
+
+            <main>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Tombol Kelas 8 -->
+                    <div data-target="page-kelas-8" class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 cursor-pointer p-8 text-center">
+                        <div class="text-8xl mb-4">📚</div>
+                        <h2 class="text-3xl font-semibold mb-2">Kelas 8</h2>
+                        <p class="text-gray-500 dark:text-gray-400">Materi Matematika untuk SMP Kelas 8</p>
+                    </div>
+                    
+                    <!-- Tombol Kelas 9 -->
+                    <div data-target="page-kelas-9" class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 cursor-pointer p-8 text-center">
+                        <div class="text-8xl mb-4">🎓</div>
+                        <h2 class="text-3xl font-semibold mb-2">Kelas 9</h2>
+                        <p class="text-gray-500 dark:text-gray-400">Materi Matematika untuk SMP Kelas 9</p>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+        <!-- ===== HALAMAN KELAS 8 ===== -->
+        <div id="page-kelas-8" class="page">
+            <header class="mb-8 flex items-center justify-between">
+                <button data-back="page-home" class="text-blue-600 dark:text-blue-400 hover:underline">
+                    &larr; Kembali
+                </button>
+                <h1 class="text-3xl font-bold text-center">Matematika Kelas 8</h1>
+                <div></div> <!-- Spacer -->
+            </header>
+
+            <main class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Daftar Topik Kelas 8 -->
+                <div data-materi="Pola Bilangan" data-konten="Ini adalah materi tentang Pola Bilangan. Kita akan belajar mengidentifikasi pola dari barisan bilangan dan menentukan suku berikutnya." data-asal="page-kelas-8" class="card-materi">
+                    <h3 class="font-semibold text-lg">Pola Bilangan</h3>
+                </div>
+                <div data-materi="Sistem Koordinat" data-konten="Ini adalah materi tentang Sistem Koordinat Kartesius. Kita akan belajar menentukan posisi titik dan objek pada bidang koordinat." data-asal="page-kelas-8" class="card-materi">
+                    <h3 class="font-semibold text-lg">Sistem Koordinat</h3>
+                </div>
+                <div data-materi="Aljabar (Relasi & Fungsi)" data-konten="Ini adalah materi tentang Relasi dan Fungsi. Kita akan memahami perbedaan keduanya dan cara menyajikannya." data-asal="page-kelas-8" class="card-materi">
+                    <h3 class="font-semibold text-lg">Relasi & Fungsi</h3>
+                </div>
+                <div data-materi="Persamaan Garis Lurus" data-konten="Ini adalah materi tentang Persamaan Garis Lurus. Kita akan belajar tentang gradien dan cara menggambar grafik garis lurus." data-asal="page-kelas-8" class="card-materi">
+                    <h3 class="font-semibold text-lg">Persamaan Garis Lurus</h3>
+                </div>
+                <div data-materi="Teorema Pythagoras" data-konten="Ini adalah materi tentang Teorema Pythagoras. Kita akan belajar hubungan antar sisi pada segitiga siku-siku." data-asal="page-kelas-8" class="card-materi">
+                    <h3 class="font-semibold text-lg">Teorema Pythagoras</h3>
+                </div>
+                <div data-materi="Lingkaran" data-konten="Ini adalah materi tentang Lingkaran. Kita akan belajar tentang unsur-unsur lingkaran, keliling, dan luas." data-asal="page-kelas-8" class="card-materi">
+                    <h3 class="font-semibold text-lg">Lingkaran</h3>
+                </div>
+            </main>
+        </div>
+
+        <!-- ===== HALAMAN KELAS 9 ===== -->
+        <div id="page-kelas-9" class="page">
+            <header class="mb-8 flex items-center justify-between">
+                <button data-back="page-home" class="text-blue-600 dark:text-blue-400 hover:underline">
+                    &larr; Kembali
+                </button>
+                <h1 class="text-3xl font-bold text-center">Matematika Kelas 9</h1>
+                <div></div> <!-- Spacer -->
+            </header>
+
+            <main class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Daftar Topik Kelas 9 -->
+                <div data-materi="Bilangan Berpangkat" data-konten="Ini adalah materi tentang Bilangan Berpangkat dan Bentuk Akar. Kita akan belajar sifat-sifat eksponen dan cara menyederhanakan bentuk akar." data-asal="page-kelas-9" class="card-materi">
+                    <h3 class="font-semibold text-lg">Bilangan Berpangkat</h3>
+                </div>
+                <div data-materi="Persamaan Kuadrat" data-konten="Ini adalah materi tentang Persamaan Kuadrat. Kita akan belajar mencari akar-akar persamaan kuadrat dengan tiga cara." data-asal="page-kelas-9" class="card-materi">
+                    <h3 class="font-semibold text-lg">Persamaan Kuadrat</h3>
+                </div>
+                <div data-materi="Fungsi Kuadrat" data-konten="Ini adalah materi tentang Fungsi Kuadrat. Kita akan belajar menggambar grafik fungsi kuadrat dan menentukan sifat-sifatnya." data-asal="page-kelas-9" class="card-materi">
+                    <h3 class="font-semibold text-lg">Fungsi Kuadrat</h3>
+                </div>
+                <div data-materi="Transformasi Geometri" data-konten="Ini adalah materi tentang Transformasi Geometri. Kita akan belajar tentang translasi, refleksi, rotasi, dan dilatasi." data-asal="page-kelas-9" class="card-materi">
+                    <h3 class="font-semibold text-lg">Transformasi Geometri</h3>
+                </div>
+                <div data-materi="Kekongruenan" data-konten="Ini adalah materi tentang Kekongruenan dan Kesebangunan. Kita akan belajar mengidentifikasi dua bangun yang kongruen atau sebangun." data-asal="page-kelas-9" class="card-materi">
+                    <h3 class="font-semibold text-lg">Kekongruenan</h3>
+                </div>
+                <div data-materi="Statistika" data-konten="Ini adalah materi tentang Statistika. Kita akan belajar mengolah dan menyajikan data, serta menentukan mean, median, dan modus." data-asal="page-kelas-9" class="card-materi">
+                    <h3 class="font-semibold text-lg">Statistika</h3>
+                </div>
+            </main>
+        </div>
+
+        <!-- ===== HALAMAN MATERI (DINAMIS) ===== -->
+        <div id="page-materi" class="page">
+            <header class="mb-8">
+                <button id="materi-back-button" data-back="page-home" class="text-blue-600 dark:text-blue-400 hover:underline">
+                    &larr; Kembali ke Daftar Topik
+                </button>
+            </header>
+
+            <main class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 md:p-10">
+                <h1 id="materi-judul" class="text-3xl font-bold mb-6"></h1>
+                <div id="materi-konten" class="prose dark:prose-invert max-w-none text-lg leading-relaxed">
+                    <!-- Konten materi akan dimasukkan di sini oleh JavaScript -->
+                </div>
+                
+                <!-- Placeholder untuk contoh soal -->
+                <div class="mt-8 border-t dark:border-gray-700 pt-6">
+                    <h4 class="text-xl font-semibold mb-3">Contoh Soal</h4>
+                    <p class="mb-2">Sebuah segitiga siku-siku memiliki sisi miring 10 cm dan salah satu sisi siku-sikunya 6 cm. Berapa panjang sisi siku-siku yang lain?</p>
+                    <button class="bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded-lg transition-colors" onclick="alert('Jawaban akan ditampilkan di sini. Ini hanya contoh interaktivitas.')">
+                        Lihat Jawaban
+                    </button>
+                </div>
+            </main>
+        </div>
+
+    </div>
+
+    <!-- STYLE UNTUK ELEMEN UMUM (agar tidak perlu diulang) -->
+    <style>
+        .card-materi {
+            @apply bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 cursor-pointer transform hover:scale-105 transition-transform duration-200;
+        }
+    </style>
+
+    <!-- JAVASCRIPT UNTUK NAVIGASI -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const pages = document.querySelectorAll('.page');
+            const navButtons = document.querySelectorAll('[data-target]');
+            const backButtons = document.querySelectorAll('[data-back]');
+            const materiButtons = document.querySelectorAll('[data-materi]');
+
+            const materiJudul = document.getElementById('materi-judul');
+            const materiKonten = document.getElementById('materi-konten');
+            const materiBackButton = document.getElementById('materi-back-button');
+
+            // Fungsi untuk menampilkan halaman
+            function showPage(pageId) {
+                // Sembunyikan semua halaman
+                pages.forEach(page => {
+                    page.classList.remove('active');
+                });
+                
+                // Tampilkan halaman yang diminta
+                const activePage = document.getElementById(pageId);
+                if (activePage) {
+                    activePage.classList.add('active');
+                    window.scrollTo(0, 0); // Scroll ke atas
+                }
+            }
+
+            // Navigasi ke halaman (Kelas 8 / Kelas 9)
+            navButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const targetPage = button.dataset.target;
+                    showPage(targetPage);
+                });
+            });
+
+            // Navigasi kembali
+            backButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const targetPage = button.dataset.back;
+                    showPage(targetPage);
+                });
+            });
+
+            // Menampilkan halaman materi
+            materiButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const judul = button.dataset.materi;
+                    const konten = button.dataset.konten;
+                    const asalHalaman = button.dataset.asal;
+
+                    // Isi konten materi
+                    materiJudul.textContent = judul;
+                    materiKonten.innerHTML = `<p>${konten}</p><p class="mt-4"><i>(Konten materi lengkap untuk ${judul} akan ditambahkan di sini...)</i></p>`;
+                    
+                    // Atur tombol kembali
+                    materiBackButton.dataset.back = asalHalaman;
+
+                    // Tampilkan halaman materi
+                    showPage('page-materi');
+                });
+            });
+
+            // Tampilkan halaman utama saat pertama kali dimuat
+            showPage('page-home');
+        });
+    </script>
+
+</body>
+</html>
